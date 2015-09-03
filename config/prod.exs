@@ -21,6 +21,11 @@ config :logger, level: :info
 
 config :phoenix_foo, PhoenixFoo.Endpoint,
   secret_key_base: System.get_env("SECRET_KEY_BASE")
+  
+config :phoenix_foo, PhoenixFoo.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  url: System.get_env("DATABASE_URL"),
+  pool_size: 20
 
 # ## SSL Support
 #
